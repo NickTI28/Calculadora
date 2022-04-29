@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title> Projeto </title>
+	<style>
+		body {
+			font: normal 17px arial;
+			background-color: grey;
+		}
+		header {
+			text-align: center;
+			color:  white;
+		}
+		section {
+			height: 300px;
+			width: 300px;
+			background-color: white;
+			margin: auto;
+			border-radius: 15px;
+			padding: 5px;
+		}
+		div {
+			margin: 10px;
+		}
+		input#botaoCalcular {
+			margin: 10px;
+		}
+		div#resultado {
+			height: 20px;
+		}
+		footer {
+			text-align: center;
+			color:  white;
+		}
+	</style>
+</head>
+
+<body>
+
+	<header>
+		<h1> Calculadora </h1>
+	</header>
+
+	<section>
+
+		<div id='numeroUm'>
+			<label for="primeiroNum"> Insira o primeiro número.: </label>
+			<input type="number" name='primeiroNum' id='primeiroNum' size="6">
+		</div>
+		<div id='numeroDois'>
+			<label for="segundoNum"> Insira o segundo número: </label>
+			<input type='number' name='segundoNum' id='segundoNum' size='6'>
+		</div>
+		<div id='operacoes'>
+			<label for='opcoesOp'> Selecione a operação: </label>
+			<select id='opcoesOp'>
+				<option value='soma' selected>Soma</option>
+				<option value='subtração'>Subtração</option>
+				<option value='multiplicação'>Multiplicação</option>
+				<option value='divisão'>Divisão</option>
+			</select>
+		</div>
+
+		<input type='button' id='botaoCalcular' value='Calcular' onclick='calcular()'>
+
+		<div id='resultado'></div>
+
+	</section>
+
+	<footer>
+		<p> By Nick </p>
+	</footer>
+
+	<script language='javascript'>
+		
+		function calcular() {
+			var primeiro = document.getElementById('primeiroNum');
+			var segundo = document.getElementById('segundoNum');
+			var operação = document.querySelector('#opcoesOp').value;
+
+			if (operação == 'soma') {
+
+				var soma = Number(primeiro.value) + Number(segundo.value);
+				var result = document.getElementById('resultado');
+				result.innerHTML = `O resultado é ${soma}! Acertou, mizerávi`;
+
+			} else if (operação == 'subtração') {
+				
+				var subtracao = Number(primeiro.value) - Number(segundo.value);
+				var result = document.getElementById('resultado');
+				result.innerHTML = `O resultado é ${subtracao}!`;
+
+			} else if (operação == 'multiplicação') {
+
+				var multiplicacao = Number(primeiro.value) * Number(segundo.value);
+				var result = document.getElementById('resultado');
+				result.innerHTML = `O resultado é ${multiplicacao}!`;
+
+			} else if (operação == 'divisão') {
+
+				var divisao = Number(primeiro.value) / Number(segundo.value);
+				var result = document.getElementById('resultado');
+				result.innerHTML = `O resultado é ${divisao}!`;
+			}
+
+		}
+
+	</script>
+
+</body>
+</html>
