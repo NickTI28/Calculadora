@@ -7,7 +7,7 @@ function calcular() {
 
 				var soma = Number(primeiro.value) + Number(segundo.value);
 				var result = document.getElementById('resultado');
-				result.innerHTML = `O resultado é ${soma}! Acertou, mizerávi`;
+				result.innerHTML = `O resultado é ${soma}!`;
 
 			} else if (operação == 'subtração') {
 				
